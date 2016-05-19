@@ -41,7 +41,7 @@ exports.handler = (event, context, callback) => {
             }
         });
     });
-    req.write(JSON.stringify({color: "green", message: "@all There are snacks in the kitchen!", notify: true, message_format: "text"}));
+    req.write(JSON.stringify({color: "green", message: "@all (snack) There are snacks in the kitchen!", notify: true, message_format: "text"}));
     req.end();
 
     req.on('error', (e) => {
