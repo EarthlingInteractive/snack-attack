@@ -1,6 +1,7 @@
 # snack-attack
 
-![Snack Attack in Hipchat](http://i.imgur.com/QXF91xr.png)
+[Snack Attack!](http://i.imgur.com/ZrbhsUp.gifv)
+
 
 This [Amazon AWS Lambda](https://aws.amazon.com/lambda/) function sends a message to a [Hipchat](https://www.hipchat.com/) room letting folks know there are snacks in the kitchen when an [Amazon IoT Button](http://aws.amazon.com/iot/button/) is pressed. 
 
