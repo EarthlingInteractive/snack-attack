@@ -1,5 +1,5 @@
 /**
- * This lambda function sends a message to hipchat letting folks know there are snacks in the kitchen.
+ * This lambda function sends a message to slack letting folks know there are snacks in the kitchen.
  * The following JSON template shows what is sent as the payload:
     {
         "serialNumber": "GXXXXXXXXXXXXXXXXX",
@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
     console.log('Received event:', event.clickType);
 
     var options = {
-		hostname: 'HIPCHAT_DOMAIN',
+		hostname: 'hooks.slack.com',
 		port: 443,
 		path: 'NOTIFICATION_PATH',
 		method: 'POST',
@@ -41,7 +41,7 @@ exports.handler = (event, context, callback) => {
             }
         });
     });
-    req.write(JSON.stringify({color: "green", message: "@all (snack) There are snacks in the kitchen!", notify: true, message_format: "text"}));
+    req.write(JSON.stringify({"text": "There are snacks in the kitchen!"}));
     req.end();
 
     req.on('error', (e) => {
